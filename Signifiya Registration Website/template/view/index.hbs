@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Fest Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 2rem auto;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        form button {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 10px;
+            background-color: #00bcd4;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background-color: #0097a7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem 2rem 4rem;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            position: relative;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .card-content {
+            display: none;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .card.active .card-content {
+            display: block;
+        }
+        button {
+            background-color: #680dd8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            height: 70px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="https://signifiya.tech/img.png" alt="Fest Logo">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+        <a href="#">Events</a>
+    </nav>
+</header>
+
+<section class="content">
+    <h1>Welcome to Signifia Tech Fest!</h1>
+    <p>Join us for an unforgettable experience filled with innovation, competition, and fun! Held at ADAMAS UNIVERSITY.</p>
+
+    <form action="/send" method="POST">
+        <input type="text" name="name" placeholder="Student Name" required>
+        <input type="text" name="roll" placeholder="Roll Number" required>
+        <button type="submit">Register</button>
+    </form>
+</section>
+
+<section class="cards">
+    <div class="card" onclick="toggleCard(this)">
+        <img src="https://signifiya.tech/Event/1.png" alt="BGMI">
+        <h3>BGMI Tournament</h3>
+        <div class="card-content">Squad battle royale event. Bring your team and dominate the field!</div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <img src="https://signifiya.tech/Event/6.png" alt="Coding">
+        <h3>Coding Contest</h3>
+        <div class="card-content">Showcase your coding skills and solve real-world problems in time-bound challenges.</div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <img src="https://signifiya.tech/Event/13.png" alt="Robotics">
+        <h3>Tug Of War</h3>
+        <div class="card-content">Tug of War is a classic team sport where two groups compete by pulling on opposite ends of a rope, trying to drag the other team across a central line.</div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <img src="https://signifiya.tech/Event/15.png" alt="Circuitronics">
+        <h3>Circuitronics</h3>
+        <div class="card-content">A practical electronics design contest for all circuit enthusiasts.</div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <img src="https://signifiya.tech/Event/2.png" alt="Valorant">
+        <h3>Valorant 1v1</h3>
+        <div class="card-content">Test your aiming and reflexes in this intense one-on-one Valorant showdown.</div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <img src="https://signifiya.tech/Event/14.png" alt="Treasure Hunt">
+        <h3>Coding Treasure Hunt</h3>
+        <div class="card-content">Follow programming clues and solve puzzles to reach the final treasure!</div>
+    </div>
+</section>
+<button>
+    <a href="/display">Data List</a>
+</button>
+<script>
+    function toggleCard(card) {
+        card.classList.toggle('active');
+    }
+</script>
+</body>
+</html>
